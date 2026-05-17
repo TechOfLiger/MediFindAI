@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MediFind AI</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+
+<nav class="navbar">
+
+  <div class="logo">
+    <i class="fa-solid fa-heart-pulse"></i>
+    <span>MediFind AI</span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#hospitals">Hospitals</a></li>
+    <li><a href="#doctors">Doctors</a></li>
+    <li><a href="#emergency">Emergency</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+
+  <button class="nav-btn">Login</button>
+
+</nav>
+
+  <!-- HERO -->
+
+<section id="home"></section>
+
+  <section class="hero">
+
+    <div class="hero-left">
+
+      <div class="tag">
+        AI Healthcare Search Engine
+      </div>
+
+      <h1>
+        Find Best Specialist Hospitals Near You
+      </h1>
+
+      <p>
+        Search diseases, symptoms, specialists and hospitals with
+        AI-powered ranking, reviews, emergency availability and
+        smart recommendations.
+      </p>
+
+      <div class="search-area">
+
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search symptoms like gas, fever, skin allergy..."
+          />
+        </div>
+
+        <button onclick="searchHospital()">
+          Search
+        </button>
+
+      </div>
+
+      <div class="popular-searches">
+
+        <span onclick="quickSearch('gas')">Gas</span>
+
+        <span onclick="quickSearch('heart')">Heart Pain</span>
+
+        <span onclick="quickSearch('skin')">Skin</span>
+
+        <span onclick="quickSearch('fever')">Fever</span>
+
+        <span onclick="quickSearch('eye')">Eye</span>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-right">
+
+      <img
+        src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1200&auto=format&fit=crop"
+      />
+
+    </div>
+
+  </section>
+
+
+
+  <!-- STATS -->
+
+  <section class="stats">
+
+    <div class="stat-card">
+      <h2>500+</h2>
+      <p>Hospitals</p>
+    </div>
+
+    <div class="stat-card">
+      <h2>1000+</h2>
+      <p>Doctors</p>
+    </div>
+
+    <div class="stat-card">
+      <h2>50K+</h2>
+      <p>Patients Helped</p>
+    </div>
+
+    <div class="stat-card">
+      <h2>24/7</h2>
+      <p>Emergency</p>
+    </div>
+
+  </section>
+
+
+
+  <!-- FILTERS -->
+
+  <section class="filters">
+
+    <select id="ratingFilter">
+      <option value="0">All Ratings</option>
+      <option value="4">4+ Rating</option>
+      <option value="4.5">4.5+ Rating</option>
+    </select>
+
+    <select id="distanceFilter">
+      <option value="100">All Distance</option>
+      <option value="5">Within 5 KM</option>
+      <option value="10">Within 10 KM</option>
+      <option value="20">Within 20 KM</option>
+    </select>
+
+    <select id="sortFilter">
+      <option value="rating">Sort By Rating</option>
+      <option value="distance">Sort By Distance</option>
+      <option value="experience">Sort By Experience</option>
+    </select>
+
+    <button onclick="applyFilters()">
+      Apply Filters
+    </button>
+
+  </section>
+
+
+
+  <!-- RESULTS -->
+<section id="hospitals" class="results-section">
+  <section class="results-section">
+
+    <div class="section-title">
+
+      <h2>Recommended Hospitals</h2>
+
+      <p>
+        AI ranked hospitals according to your symptoms and location.
+      </p>
+
+    </div>
+
+    <div id="results" class="results-grid">
+
+    </div>
+
+  </section>
+
+</section>
+
+  <!-- SPECIALISTS -->
+
+<section id="doctors" class="specialists">
+  <section class="specialists">
+
+    <div class="section-title">
+
+      <h2>Popular Specialists</h2>
+
+      <p>
+        Explore healthcare experts and departments.
+      </p>
+
+    </div>
+
+    <div class="specialist-grid">
+
+      <div class="specialist-card">
+        <i class="fa-solid fa-heart-circle-plus"></i>
+        <h3>Cardiologist</h3>
+      </div>
+
+      <div class="specialist-card">
+        <i class="fa-solid fa-stethoscope"></i>
+        <h3>Gastroenterologist</h3>
+      </div>
+
+      <div class="specialist-card">
+        <i class="fa-solid fa-eye"></i>
+        <h3>Eye Specialist</h3>
+      </div>
+
+      <div class="specialist-card">
+        <i class="fa-solid fa-user-doctor"></i>
+        <h3>Dermatologist</h3>
+      </div>
+
+      <div class="specialist-card">
+        <i class="fa-solid fa-brain"></i>
+        <h3>Neurologist</h3>
+      </div>
+
+      <div class="specialist-card">
+        <i class="fa-solid fa-bone"></i>
+        <h3>Orthopedic</h3>
+      </div>
+
+    </div>
+
+  </section>
+
+</section>
+
+  <!-- EMERGENCY -->
+<section id="emergency" class="emergency">
+  <section class="emergency">
+
+    <div class="emergency-box">
+
+      <div>
+
+        <h2>
+          24/7 Emergency Ambulance
+        </h2>
+
+        <p>
+          Fast emergency response with live ambulance tracking.
+        </p>
+
+      </div>
+
+      <button>
+        <i class="fa-solid fa-phone"></i>
+        Call Now
+      </button>
+
+    </div>
+
+  </section>
+
+</section>
+
+  <!-- FOOTER -->
+<footer id="about">
+  <footer>
+
+    <h2>MediFind AI</h2>
+
+    <p>
+      Smart AI healthcare discovery platform.
+    </p>
+
+    <div class="social-icons">
+
+      <i class="fa-brands fa-facebook"></i>
+
+      <i class="fa-brands fa-instagram"></i>
+
+      <i class="fa-brands fa-linkedin"></i>
+
+      <i class="fa-brands fa-x-twitter"></i>
+
+    </div>
+
+  </footer>
+</footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
