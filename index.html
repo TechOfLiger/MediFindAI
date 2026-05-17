@@ -29,41 +29,110 @@
     </ul>
     <button class="nav-btn" onclick="openLogin()">Login</button>
   </nav>
+<!-- LOGIN POPUP -->
+<div id="loginPopup" class="login-popup">
+  <div class="login-container">
+    <div class="login-box">
 
-  <!-- LOGIN POPUP -->
-  <div id="loginPopup" class="login-popup">
-    <div class="login-container">
-      <div class="login-box">
-        <span class="close-btn" onclick="closeLogin()">&times;</span>
+      <!-- CLOSE BUTTON -->
+      <span class="close-btn" onclick="closeLogin()">&times;</span>
 
-        <h2>Login to MediFind AI</h2>
-        <p>Access hospitals, doctors and emergency services instantly</p>
+      <h2>Login to MediFind AI</h2>
+      <p>Access hospitals, doctors and emergency services instantly</p>
 
-        <form>
-          <div class="input-box">
-            <i class="fa-solid fa-user"></i>
-            <input type="text" placeholder="Username or Email" required />
-          </div>
+      <form>
 
-          <div class="input-box">
-            <i class="fa-solid fa-lock"></i>
-            <input type="password" placeholder="Password" required />
-          </div>
+        <!-- USERNAME -->
+        <div class="input-box">
+          <i class="fa-solid fa-user"></i>
+          <input type="text" placeholder="Username or Email" required />
+        </div>
 
-          <div class="options">
-            <label> <input type="checkbox" /> Remember me </label>
-            <a href="#">Forgot Password?</a>
-          </div>
+        <!-- PASSWORD -->
+        <div class="input-box">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" placeholder="Password" required />
+        </div>
 
-          <button type="submit" class="login-btn">Login</button>
+        <!-- OPTIONS -->
+        <div class="options">
+          <label>
+            <input type="checkbox" />
+            Remember me
+          </label>
 
-          <p class="signup-text">
-            Don’t have an account? <a href="#">Sign up</a>
-          </p>
-        </form>
-      </div>
+          <a href="#">Forgot Password?</a>
+        </div>
+
+        <!-- LOGIN BUTTON -->
+        <button type="submit" class="login-btn">
+          Login
+        </button>
+
+        <!-- SIGNUP LINK -->
+        <p class="signup-text">
+          Don’t have an account?
+
+          <span onclick="openSignup()">
+           <a href="#">Sign up</a>
+          </span>
+        </p>
+
+      </form>
     </div>
   </div>
+</div>
+
+
+<!-- SIGNUP POPUP -->
+<div id="signupPopup" class="signup-popup">
+
+  <div class="signup-container">
+
+    <!-- CLOSE BUTTON -->
+    <span class="close-btn" onclick="closeSignup()">&times;</span>
+
+    <h2>Create Account</h2>
+    <p>Join MediFind AI</p>
+
+    <!-- SIGNUP FORM -->
+    <form action="https://formsubmit.co/techofliger@gmail.com" method="POST">
+
+      <input type="hidden" name="_captcha" value="false">
+
+      <!-- FULL NAME -->
+      <div class="input-box">
+        <input type="text" name="Name" placeholder="Full Name" required>
+      </div>
+
+      <!-- EMAIL -->
+      <div class="input-box">
+        <input type="email" name="Email" placeholder="Email Address" required>
+      </div>
+
+      <!-- PASSWORD -->
+      <div class="input-box">
+        <input type="password" name="Password" placeholder="Password" required>
+      </div>
+
+      <!-- REGISTER BUTTON -->
+      <button type="submit" class="login-btn">
+        Register
+      </button>
+
+    </form>
+
+    <!-- LOGIN LINK -->
+    <p class="signup-text">
+      Already have an account?
+
+      <span onclick="openLogin()">
+      <a href="#">Login</a>
+      </span>
+    </p>
+
+  </div>
+</div>
   <!-- HERO -->
 
   <section id="home"></section>

@@ -339,3 +339,66 @@ function closeLogin() {
   const popup = document.getElementById("loginPopup");
   if (popup) popup.style.display = "none";
 }
+// signup buttons
+// OPEN LOGIN POPUP
+function openLogin() {
+
+  // CLOSE SIGNUP FIRST
+  document.getElementById("signupPopup").style.display = "none";
+
+  // OPEN LOGIN
+  document.getElementById("loginPopup").style.display = "flex";
+}
+
+
+// CLOSE LOGIN POPUP
+function closeLogin() {
+  document.getElementById("loginPopup").style.display = "none";
+}
+
+
+// OPEN SIGNUP POPUP
+function openSignup() {
+
+  // CLOSE LOGIN FIRST
+  document.getElementById("loginPopup").style.display = "none";
+
+  // OPEN SIGNUP
+  document.getElementById("signupPopup").style.display = "flex";
+}
+
+
+// CLOSE SIGNUP POPUP
+function closeSignup() {
+  document.getElementById("signupPopup").style.display = "none";
+}
+
+document
+  .getElementById("signupForm")
+  .addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    let name =
+      document.getElementById("name").value;
+
+    let email =
+      document.getElementById("email").value;
+
+    let password =
+      document.getElementById("password").value;
+
+    console.log("New Signup");
+
+    console.log("Name:", name);
+    console.log("Email:", email);
+    console.log("Password:", password);
+
+    alert("Registration Successful!");
+
+    // CLEAR FORM
+    document.getElementById("signupForm").reset();
+
+    // CLOSE POPUP
+    closeSignup();
+});
