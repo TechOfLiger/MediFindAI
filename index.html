@@ -30,11 +30,53 @@
     <li><a href="#emergency">Emergency</a></li>
     <li><a href="#about">About</a></li>
   </ul>
-
-  <button class="nav-btn">Login</button>
-
+  <button class="nav-btn" onclick="openLogin()">Login</button>
 </nav>
 
+<!-- LOGIN POPUP -->
+<div id="loginPopup" class="login-popup">
+
+  <div class="login-container">
+
+    <div class="login-box">
+
+      <span class="close-btn" onclick="closeLogin()">&times;</span>
+
+      <h2>Login to MediFind AI</h2>
+      <p>Access hospitals, doctors and emergency services instantly</p>
+
+      <form>
+
+        <div class="input-box">
+          <i class="fa-solid fa-user"></i>
+          <input type="text" placeholder="Username or Email" required>
+        </div>
+
+        <div class="input-box">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" placeholder="Password" required>
+        </div>
+
+        <div class="options">
+          <label>
+            <input type="checkbox"> Remember me
+          </label>
+          <a href="#">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="login-btn">Login</button>
+
+        <p class="signup-text">
+          Don’t have an account? <a href="#">Sign up</a>
+        </p>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
   <!-- HERO -->
 
 <section id="home"></section>

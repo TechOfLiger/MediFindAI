@@ -276,8 +276,155 @@ body .grid{
   0 10px 30px rgba(255,255,255,0.15);
 
 }
+/* LOGIN */
+/* ===== POPUP OVERLAY (KEEP SIMPLE) ===== */
+.login-popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  justify-content: center;
+  align-items: center;
 
+  background: rgba(0, 0, 0, 0.6); /* only dark overlay */
+  z-index: 1000;
+}
 
+/* ===== LOGIN BOX (FUTURISTIC BLACK & WHITE) ===== */
+.login-box {
+  position: relative; /* ✅ ADD THIS LINE ONLY */
+
+  width: 380px;
+  padding: 35px;
+  border-radius: 14px;
+
+  background: #0f0f0f;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  box-shadow:
+    0 0 20px rgba(255, 255, 255, 0.08),
+    inset 0 0 10px rgba(255, 255, 255, 0.05);
+
+  text-align: center;
+  color: white;
+
+  animation: popup 0.3s ease;
+}
+
+/* POPUP ANIMATION */
+@keyframes popup {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* TITLE */
+.login-box h2 {
+  color: white;
+  letter-spacing: 1px;
+}
+
+/* DESCRIPTION */
+.login-box p {
+  color: #aaa;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+/* INPUT BOX */
+.input-box {
+  display: flex;
+  align-items: center;
+  background: #151515;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.input-box:hover {
+  border-color: white;
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+.input-box i {
+  margin-right: 10px;
+  color: white;
+}
+
+.input-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  width: 100%;
+}
+
+/* OPTIONS */
+.options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin: 10px 0;
+  color: #aaa;
+}
+
+.options a {
+  color: white;
+  text-decoration: none;
+}
+
+/* LOGIN BUTTON */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+
+  background: white;
+  color: black;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: black;
+  color: white;
+  border: 1px solid white;
+}
+
+/* SIGNUP TEXT */
+.signup-text {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.signup-text a {
+  color: white;
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  transform: rotate(90deg);
+}
 /* =========================================
    HERO
 ========================================= */

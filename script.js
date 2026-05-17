@@ -329,3 +329,13 @@ document.querySelectorAll(".nav-links a").forEach(link => {
     }
   });
 });
+
+function openLogin() {
+    const popup = document.getElementById("loginPopup");
+    if (popup) popup.style.display = "flex";
+}
+
+function closeLogin() {
+    const popup = document.getElementById("loginPopup");
+    if (popup) popup.style.display = "none";
+}
